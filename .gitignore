@@ -4,7 +4,7 @@
 
 # Project specific
 
-.vscode
+compile_commands.json
 Git GUI.lnk
 
 # ################################
