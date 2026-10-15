@@ -4,5 +4,7 @@ project(clipboard-format
     LANGUAGES C CXX
 )
 
+add_subdirectory(external)
+
 add_executable(clipboard-format src/main.cpp)
 
