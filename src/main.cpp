@@ -63,8 +63,7 @@ int main(int, char **) {
     size_t end = value.find_last_not_of(" \t\r\n");
     
     if (start == std::string::npos) {
-      std::cout << start;
-      return 0; // String is all whitespace
+      return EXIT_SUCCESS; // String is all whitespace
     }
     
     value = value.substr(start, end - start + 1);
