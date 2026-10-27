@@ -47,9 +47,9 @@ int main(int, char **) {
     wdt = 100;
     while (wdt > 0){
       wdt--;
-      p = value.find("  ");
+      p = value.find("/");
       if (p == std::string::npos) { break; }
-      value = value.replace(p, 2, " ");
+      value = value.replace(p, 1, " ");
     }
     wdt = 100;
     while (wdt > 0){
@@ -57,6 +57,13 @@ int main(int, char **) {
       p = value.find(":");
       if (p == std::string::npos) { break; }
       value = value.replace(p, 1, ".");
+    }
+    wdt = 100;
+    while (wdt > 0){
+      wdt--;
+      p = value.find("  ");
+      if (p == std::string::npos) { break; }
+      value = value.replace(p, 2, " ");
     }
 
     size_t start = value.find_first_not_of(" \t\r\n");
