@@ -68,14 +68,8 @@ int main(int, char **) {
     
     value = value.substr(start, end - start + 1);
 
-    //std::cout << "Clipboard content is " << std::endl;
     std::cout << value << std::endl;
-    //std::cout << std::endl;
-
-    //for (size_t i=0; i<value.length(); i++){
-      //char c = value[i];
-      //std::cout << "[" << i << "] " << c << " (" << int(c) << ")" << std::endl;
-    //}
+    clip::set_text(value);
   }
 
   return EXIT_SUCCESS;
