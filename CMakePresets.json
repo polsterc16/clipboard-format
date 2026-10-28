@@ -13,6 +13,20 @@
                 "CMAKE_CXX_COMPILER": "C:/Program Files/LLVM/bin/clang++.exe",
                 "CMAKE_BUILD_TYPE": "Debug"
             }
+        },
+        {
+            "name": "configure_release",
+            "displayName": "Conf RELEASE",
+            "description": "Using compilers: C = C:\\Program Files\\LLVM\\bin\\clang.exe, CXX = C:\\Program Files\\LLVM\\bin\\clang++.exe",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "C:/Program Files/LLVM/bin/clang.exe",
+                "CMAKE_CXX_COMPILER": "C:/Program Files/LLVM/bin/clang++.exe",
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_CONFIGURATION_TYPES": "Release"
+            }
         }
     ],
     "buildPresets": [
@@ -21,6 +35,29 @@
             "description": "Clang x86_64 WIN-msvc",
             "displayName": "Clang x86_64 WIN-msvc",
             "configurePreset": "Preset Configure CMake"
+        },
+        {
+            "name": "build_release",
+            "description": "build_release description",
+            "displayName": "Build RELEASE",
+            "configurePreset": "configure_release"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "workflow_release",
+            "description": "workflow_release description",
+            "displayName": "workflow RELEASE",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "configure_release"
+                },
+                {
+                    "type": "build",
+                    "name": "build_release"
+                }
+            ]
         }
     ]
 }
