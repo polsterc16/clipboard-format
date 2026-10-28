@@ -3,10 +3,30 @@
 #include <iostream>
 #include <string>
 #include <format>
+#include <nlohmann/json.hpp>
+#include "json_helper.hpp"
+
+// using nlohmann::json;
+
 
 int main(int, char **) {
-  
-  //std::cout << "Hello, from clipboard-format!" << std::endl;
+  namespace JH = json_helper;
+  using json = nlohmann::json;
+
+  // std::cout << "nlohmann: " << type(nlohmann) << std::endl;
+  // std::cout << "nlohmann::json: " << type(nlohmann::json()) << std::endl;
+  std::cout << JH::test_int() << std::endl;
+
+  std::cout << JH::test_json() << std::endl;
+
+  return EXIT_SUCCESS;
+  // namespace Active = nlohmann::json;
+
+  // std::cout << "Hello, from clipboard-format!" << std::endl;
+
+  // Active::json j = {{"a",1},{"b",2}};
+  // std::cout << std::setw(4) << j << std::endl;
+  // return EXIT_SUCCESS;
 
   int wdt;
   size_t p;
